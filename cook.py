@@ -1,1 +1,2 @@
-print("YOU ARE A PYTHON")
+age = "pizza"
+print(age)
