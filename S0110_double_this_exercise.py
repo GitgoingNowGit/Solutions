@@ -27,10 +27,9 @@ Fortsæt derefter med den næste fil.
 """
 
 #  Write your function below this line.
-def double():
-    number = 3
+def double(number):
     double_number = (number*2)
     print(double_number)
 
 # Here starts the main program. From the main program you can call your functions.
-double()
+double(3)
