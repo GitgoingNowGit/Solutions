@@ -20,7 +20,7 @@ Der er allerede én kodelinje i hovedprogrammet, der kalder denne funktion med a
 Kør programmet. Tallet 6 bør udskrives i konsollen,
 efterfulgt af "Process finished with exit code 0".
 Det betyder, at programmet sluttede uden en fejlmeddelelse.
-
+#change
 Når dit program er færdigt, skal du skubbe det til dit github-repository.
 Send derefter denne Teams-meddelelse til din lærer: <filename> færdig
 Fortsæt derefter med den næste fil.
