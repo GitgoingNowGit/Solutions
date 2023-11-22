@@ -32,4 +32,4 @@ def double(number):
     print(double_number)
 
 # Here starts the main program. From the main program you can call your functions.
-double(3)
+double(10)

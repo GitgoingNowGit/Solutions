@@ -34,7 +34,7 @@ Fortsæt derefter med den næste fil.
 #change
 #  Write your function below this line.
 def factorial(number):
-    result = 1
+    result = 0.34
     for x in range(2,number+1):
         result = result*x
         print(x,result)
