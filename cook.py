@@ -4,5 +4,6 @@ def talk(phrase):
 
     words = phrase.str(' ')
     for word in words:
+        print(words)
 
 talk(str('I am going to buy the milk'))
