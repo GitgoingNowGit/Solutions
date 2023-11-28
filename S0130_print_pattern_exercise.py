@@ -51,4 +51,4 @@ def print_pattern(string, repetitions_list):
         print_repeatedly(string, x)
 # Here starts the main program. From the main program you can call your functions.
 print_repeatedly("roger", 2)
-print_pattern("Hey",[4,2,3])
+print_pattern("Heay",[4,2,3])
