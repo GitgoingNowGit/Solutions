@@ -21,10 +21,17 @@ Fortsæt derefter med den næste fil.
 
 plagarisme? 🤷‍♂️
 """
+
 maybemyfile = "file_w_namesX.txt"
-line_number = 0
+line_numberbruh = 0
+
 with open(maybemyfile) as file:
     for line in file:
-        line_number += 1
-        print(f"Target {line_number}: {line.strip(int)}.")
-    print()
+         line_numberbruh += 1
+         line2 = line.split(",", 1)
+         print(f" Target 2: {line_numberbruh}: {line2}")
+         line3 = []
+         for x in line2:
+            line3.append(x.strip())
+            print(f" Target 3: {line_numberbruh}: {line3}")
+
