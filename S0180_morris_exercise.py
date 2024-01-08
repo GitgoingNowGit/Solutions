@@ -70,7 +70,7 @@ def buy_whisky():
     elif morris["gold"] < 1:
         print("Morris has no gold to buy whisky for")
 def drink():
-    if morris["whisky"] >= 1:
+    if morris["whisky"] >= 1 and morris["thirst"] <= 50:
          morris["sleepiness"] += 5
          morris["thirst"] -= 15
          morris["hunger"] -= 1
