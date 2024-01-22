@@ -17,28 +17,15 @@ Hvis du går i stå, så spørg google, de andre elever eller læreren (i denne 
 Når dit program er færdigt, skal du skubbe det til dit github-repository.
 Send derefter denne Teams-meddelelse til din lærer: <filename> færdig
 Fortsæt derefter med den næste fil."""
+class Miner():
+    def __init__(self):
+        self.sleepiness
 
-#globalize variables
-global gold
-global whiskey
-global sleepiness
-global thirst
-global hunger
-global turn
-global happiness
+    def sleep(self):
+        print("Morris sleeps")
+        self.sleepiness = 1
 
-def sleep():
-    sleepiness -= 25
-    happiness += 15
-def alive():
-    sleepiness += 5
-    happiness -= 10
+morris = Miner()
 
-turn = 0
-hunger = 0
-thirst = 0
-sleepiness = 0
-whiskey = 0
-gold = 0
-happiness = 30
-
+morris.sleep()
+print(sleepiness)
