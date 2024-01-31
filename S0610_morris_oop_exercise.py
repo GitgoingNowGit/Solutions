@@ -37,12 +37,11 @@ class Miner():
         #     morris.whisky = 0
         # if morris.gold < 0:
         #     morris.gold = 0
-        if morris.sleepiness > 85:
+        if morris.sleepiness > 84:
+            morris.sleep()
             morris.sleep()
         if morris.hunger > 90:
             morris.eat()
-        if morris.sleepiness < 85:
-            morris.mine()
         if morris.thirst > 95 and morris.gold > 0:
             morris.buy_whisky()
             morris.drink()
@@ -93,6 +92,7 @@ def dead():
 morris = Miner() #morris is very stupid and won't accept that he is a giant retarded pile of dumpster code, so he mines, killing himself slowly
 
 while not dead() and morris.turn < 1000:
+    morris.mine()
     morris.check()
     morris.turn += 1
     print("Morris sleepiness:", morris.sleepiness, "Morris thirst:", morris.thirst, "Morris hunger:", morris.hunger, "Morris whisky:", morris.whisky,"Morris gold:",morris.gold,"Morris turn:",morris.turn)
