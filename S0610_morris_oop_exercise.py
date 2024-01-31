@@ -40,7 +40,7 @@ class Miner():
         if morris.sleepiness > 84:
             morris.sleep()
             morris.sleep()
-        if morris.hunger > 90:
+        if morris.hunger > 95:
             morris.eat()
         if morris.thirst > 95 and morris.gold > 0:
             morris.buy_whisky()
@@ -97,4 +97,4 @@ while not dead() and morris.turn < 1000:
     morris.turn += 1
     print("Morris sleepiness:", morris.sleepiness, "Morris thirst:", morris.thirst, "Morris hunger:", morris.hunger, "Morris whisky:", morris.whisky,"Morris gold:",morris.gold,"Morris turn:",morris.turn)
 else:
-    print("Morris died or the turn limit of 1000 was met.")
+    print("### Morris died or the turn limit of 1000 was met. ###")
