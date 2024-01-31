@@ -26,31 +26,58 @@ Fortsæt derefter med den næste fil."""
 
 
 class Miner():
-
+    def check(self):
+        # if morris.sleepiness < 0:
+        #     morris.sleepiness = 0
+        # if morris.thirst < 0:
+        #     morris.thirst = 0
+        # if morris.hunger < 0:
+        #     morris.hunger = 0
+        # if morris.whisky < 0:
+        #     morris.whisky = 0
+        # if morris.gold < 0:
+        #     morris.gold = 0
+        if morris.sleepiness > 85:
+            morris.sleep()
+        if morris.hunger > 90:
+            morris.eat()
+        if morris.sleepiness < 85:
+            morris.mine()
+        if morris.thirst > 95 and morris.gold > 0:
+            morris.buy_whisky()
+            morris.drink()
 
     def sleep(self):
         morris.sleepiness -= 10
         morris.thirst += 1
-        if morris.sleepiness < 0:
-            morris.sleepiness = 0
-        print("M. slept")
+        morris.hunger += 1
 
     def mine(self):
         morris.sleepiness += 5
         morris.thirst += 5
-        print("M. mined")
+        morris.hunger += 5
+        morris.gold += 5
 
     def drink(self):
-        if morris.whisky > 0 and morris.thirst > 0:
+        if morris.whisky > 0:
             morris.thirst -= 15
             morris.sleepiness += 5
-        elif morris.thirst < 0:
-            morris.thirst = 0
-        print("M. drank")
+            morris.hunger += 1
+            morris.whisky -= 1
 
     def eat(self):
-        morris.hunger -= 20
-        morris.thirst += 5
+            morris.hunger -= 20
+            morris.thirst += 5
+            morris.gold -= 2
+            morris.sleepiness += 5
+
+    def buy_whisky(self):
+        if morris.gold > 0:
+            morris.sleepiness += 5
+            morris.thirst += 1
+            morris.hunger += 1
+            morris.whisky += 1
+            morris.gold -= 1
 
 
     def __init__(self, sleepiness=0, thirst=0, hunger=0, whisky=0, gold=0, turn=0):
@@ -60,19 +87,14 @@ class Miner():
         self.whisky = whisky
         self.gold = gold
         self.turn = turn
-
-
 def dead():
-    return morris.sleepiness > 100 or morris.thirst > 100 or morris.hunger > 100
+    return morris.sleepiness > 99 or morris.thirst > 99 or morris.hunger > 99
 
+morris = Miner() #morris is very stupid and won't accept that he is a giant retarded pile of dumpster code, so he mines, killing himself slowly
 
-morris = Miner()
-#morris is very stupid and doesn't know he is a giant retarded pile of dumpster code, so he mines, killing himself slowly
 while not dead() and morris.turn < 1000:
-    morris.mine()
-    morris.sleep()
-    morris.drink()
+    morris.check()
     morris.turn += 1
-    print("Morris sleepiness:", morris.sleepiness, "Morris thirst:", morris.thirst, "Morris hunger:", morris.hunger, "Turn:", morris.turn)
+    print("Morris sleepiness:", morris.sleepiness, "Morris thirst:", morris.thirst, "Morris hunger:", morris.hunger, "Morris whisky:", morris.whisky,"Morris gold:",morris.gold,"Morris turn:",morris.turn)
 else:
     print("Morris died or the turn limit of 1000 was met.")
