@@ -89,7 +89,7 @@ class Miner():
 def dead():
     return morris.sleepiness > 99 or morris.thirst > 99 or morris.hunger > 99
 
-morris = Miner() #morris is very stupid and won't accept that he is a giant retarded pile of dumpster code, so he mines, killing himself slowly
+morris = Miner() #morris is very stupid and won't accept that he is a giant retarded pile of dumpster code, so he mines, killing himself slowly (but now he is a little smarter)
 
 while not dead() and morris.turn < 1000:
     morris.mine()
