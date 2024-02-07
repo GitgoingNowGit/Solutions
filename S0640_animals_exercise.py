@@ -59,11 +59,43 @@ Når dit program er færdigt, skal du skubbe det til dit github-repository.
 Send derefter denne Teams-meddelelse til din lærer: <filename> færdig
 Fortsæt derefter med den næste fil."""
 
+
 class Animal():
-    def __init__(self, name,sound,height,weight,legs,female):
+    def __init__(self, name, sound, height, weight, legs, female):
         Animal.name = name
         Animal.sound = sound
         Animal.height = height
         Animal.weight = weight
         Animal.legs = legs
         Animal.female = female
+    def makenoise(self):
+        print(f"You hear an unspecified animal noise")
+
+class Dog(Animal):
+    def __repr__(self):
+        if self.hunts_sheep():
+             return f"The dog goes {self.sound}. It is {self.height}cm tall. It weighs {self.weight}kg, and it has {self.legs} legs. This dog hunts sheep."
+        else:
+            return f"The dog goes {self.sound}. It is {self.height}cm tall. It weighs {self.weight}kg, and it has {self.legs} legs. This dog does not hunt sheep."
+
+    def makenoise(self):
+        print(f"You hear a dog")
+
+    def hunts_sheep(self):
+            if Dog("ziggy", "wof", 4, 50,4, False):
+                return True
+            else:
+                return False
+class Cat(Animal):
+
+    def makenoise(self):
+        print("You hear a cat")
+
+dacat = Cat("Cat", "miaw", 3, 35, 4, True)
+ziggy = Dog("ziggy","wof",4,50,4,False)
+dadog = Dog("cheeseburger","wof",4,50,4,False)
+ziggy.makenoise()
+animallist = [dacat,ziggy]
+for Animal in animallist:
+    Animal.makenoise()
+print(ziggy)
