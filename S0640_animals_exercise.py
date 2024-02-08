@@ -58,15 +58,8 @@ Del 10:
 Når dit program er færdigt, skal du skubbe det til dit github-repository.
 Send derefter denne Teams-meddelelse til din lærer: <filename> færdig
 Fortsæt derefter med den næste fil."""
+import random
 
-
-def mate(mother, father):
-    if mother.female:
-        print("mother ok")
-    else:print("m no")
-    if father.female:
-        print("f no")
-    else:print("father ok")
 class Animal():
     def __init__(self, name, sound, height, weight, legs, female):
         self.name = name
@@ -107,6 +100,12 @@ class Cat(Animal):
 dacat = Cat("Cat", "miaw", 3, 35, 4, True)
 ziggy = Dog("ziggy","wof",4,50,4,False, 9000, True) #https://hq.ax/c6R
 dadog = Dog("cheeseburger","wof",4,40,4,True, 6, False)
+
+rand_bool = random.choice([True,False])
+def mate(mother, father):
+    if mother.female and not father.female:
+        return f"puppyoso", "Moo",random.random(),random.randint(4,9),random.randint(2,4),rand_bool,random.randrange(3,8),rand_bool
+
 animallist = [ziggy, dadog,dacat]
 for animal in animallist:
     animal.makenoise()
