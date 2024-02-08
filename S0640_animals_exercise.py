@@ -60,42 +60,55 @@ Send derefter denne Teams-meddelelse til din lærer: <filename> færdig
 Fortsæt derefter med den næste fil."""
 
 
+def mate(mother, father):
+    if mother.female:
+        print("mother ok")
+    else:print("m no")
+    if father.female:
+        print("f no")
+    else:print("father ok")
 class Animal():
     def __init__(self, name, sound, height, weight, legs, female):
-        Animal.name = name
-        Animal.sound = sound
-        Animal.height = height
-        Animal.weight = weight
-        Animal.legs = legs
-        Animal.female = female
+        self.name = name
+        self.sound = sound
+        self.height = height
+        self.weight = weight
+        self.legs = legs
+        self.female = female
     def makenoise(self):
         print(f"You hear an unspecified animal noise")
 
 class Dog(Animal):
+    def __init__(self, name, sound, height, weight, legs, female, tail_length, hunts_sheep):
+        super().__init__(name, sound, height, weight, legs, female)
+        self.tail_length = tail_length
+        self.hunts_sheep = hunts_sheep
+
+
     def __repr__(self):
-        if self.hunts_sheep():
-             return f"The dog goes {self.sound}. It is {self.height}cm tall. It weighs {self.weight}kg, and it has {self.legs} legs. This dog hunts sheep."
-        else:
-            return f"The dog goes {self.sound}. It is {self.height}cm tall. It weighs {self.weight}kg, and it has {self.legs} legs. This dog does not hunt sheep."
+             return f"The dog goes {self.sound}. It is {self.height}cm tall. It weighs {self.weight}kg, and it has {self.legs} legs."
 
     def makenoise(self):
         print(f"You hear a dog")
 
-    def hunts_sheep(self):
-            if Dog("ziggy", "wof", 4, 50,4, False):
-                return True
-            else:
-                return False
+    def wag_tail(self):
+        return f"the dog {self.name} wags their {self.tail_length}cm long tail"
+
+    # def hunts_sheep(self):
+    #         if Dog("ziggy", "wof", 4, 50,4, False):
+    #             return True
+    #         else:
+    #             return False
 class Cat(Animal):
 
     def makenoise(self):
         print("You hear a cat")
 
 dacat = Cat("Cat", "miaw", 3, 35, 4, True)
-ziggy = Dog("ziggy","wof",4,50,4,False)
-dadog = Dog("cheeseburger","wof",4,50,4,False)
-ziggy.makenoise()
-animallist = [dacat,ziggy]
-for Animal in animallist:
-    Animal.makenoise()
-print(ziggy)
+ziggy = Dog("ziggy","wof",4,50,4,False, 9000, True) #https://hq.ax/c6R
+dadog = Dog("cheeseburger","wof",4,40,4,True, 6, False)
+animallist = [ziggy, dadog,dacat]
+for animal in animallist:
+    animal.makenoise()
+print(ziggy.wag_tail())
+mate(dadog, ziggy)
