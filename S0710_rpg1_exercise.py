@@ -62,11 +62,11 @@ class Character:
     def get_hit(self, attackpower):
         self._current_health -= attackpower
 
-    def heal(self,other):
-        print("\n", self.name, "healed", other.name + ',', "mitigating damage of", self.attackpower, "HP on", other.name + ".", "\n")
-        other.get_heal(self)
-    def get_heal(self, healpower):
-        self._current_health += healpower
+    # def heal(self,other):
+    #     print("\n", self.name, "healed", other.name + ',', "mitigating damage of", self.attackpower, "HP on", other.name + ".", "\n")
+    #     other.get_heal(self)
+    # def get_heal(self, healpower):
+    #     self._current_health += healpower
 
 class Healer(Character):
     def __init__(self, profession, name, health, attackpower, healpower):
@@ -75,26 +75,26 @@ class Healer(Character):
         self._current_health = health
 
     def heal(self,other):
-        print("\n", self.name, "healed", other.name + ',', "mitigating damage of", self.attackpower, "HP on", other.name + ".", "\n")
-        other.get_heal(self)
+        print("\n", self.name, "healed", other.name + ',', "reversing damage of", self.attackpower, "HP on", other.name + ".", "\n")
+        other.get_heal(self.healpower)
 
     def get_heal(self, healpower):
         self._current_health += healpower
 
-
+# random.randint(10,14)
 # def all_health():
 #     characters = [arthur, marduk]
 #     for character in characters:
 #         print(character.health_status())
 
-grisell = Character('Knight', 'Grissell',random.randint(95,145),8)
+grisell = Character('Knight', 'Grissell',random.randint(95,145),14)
 arthur = Character('Knight', 'Arthur', 120, random.randint(9, 11))
 marduk = Character('Sorcerer', 'Marduk', 100, random.randint(10, 13))
-althea = Healer('Healer', 'Althea', random.randint(68, 88), random.randint(11,19), 0)
-rafael = Healer('Healer', 'Rafael', 92, 0, random.randint(10,14))
+althea = Healer('Healer', 'Althea', random.randint(68, 84), random.randint(11,15), 5)
+rafael = Healer('Healer', 'Rafael', 92, 0, 4)
 print(marduk)
 arthur.hit(marduk)
-print(marduk)
-althea.heal(marduk)
-print(marduk)
+print(rafael.health_status())
+althea.heal(rafael)
+print(rafael.health_status())
 # all_health()
