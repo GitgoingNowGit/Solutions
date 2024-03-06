@@ -21,12 +21,12 @@ Fortsæt derefter med den næste fil."""
 import random
 
 start = 1000
-end = 2000
+end = 9999
 global schwarz_coin
 global Weiss_coin
 
 print(f'This is a guessing game. Your task is to guess a four digit integer between {start} and {end}. \nYou will guess the integers individually till you have all four digits.')
-answer = 1234  #random.randint(start,end)
+answer = random.randint(start,end)
 guess = input('\nEnter your guess for the first number here: ')
 if int(str(guess)) == int(str(answer)[:1]):
     print("You guessed the correct number! +1 schwarz coin")
